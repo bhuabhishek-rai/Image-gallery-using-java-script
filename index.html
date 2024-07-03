@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title>
+          Image Gallary
+        </title>
+            <style>
+                body{
+                    background:darkgray;
+                }
+                .gallary div{
+                    width:100%;
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    grid-gap:20px;
+                    padding:10px;
+                    flex:none;
+                }
+                .gallary{
+                    width:900px;
+                    display:flex;
+                    overflow-x: scroll;
+                }
+                .gallery div img{
+                    width:100%;
+                    filter: grayscale(100%);
+                    transition: transform 0.5s;
+                    
+                }
+                .gallery::-webkit-scrollbar{
+                    display:none;
+                }
+                .gallary-wrap{
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin:10% auto; 
+                }
+                #backbtn,#nextbtn{
+                    width:50px;
+                    cursor: pointer;
+                    margin: 40px;
+                }
+                .gallary div img:hover{
+                    filter:grayscale(0);
+                    cursor:pointer;
+                    transform: scale(1.3);
+                }
+            </style>
+    </head>        
+            
+            
+            
+            <body>
+   
+                <div class="gallary-wrap">
+              <img src="  img\back.png" id="backbtn">
+                    
+              <div class="gallary">
+             
+             
+                <div> 
+                <span>  <img src="img\img1.jpg"></span>
+                <span>  <img src="img\img2.jpg"></span>
+                <span>  <img src="img\img3.jpg"></span>
+
+             </div> 
+             <div> 
+                <span>  <img src="img\img4.jpg"></span>
+                <span>  <img src="img\img5.jpg"></span>
+                <span>  <img src="img\img6.jpg"></span>
+
+             </div>
+             <div> 
+                <span>  <img src="img\img7.jpg"></span>
+                <span>  <img src="img\img8.jpg"></span>
+                <span>  <img src="img\img9.jpg"></span>
+
+             </div>
+             <div> 
+                <span>  <img src="img\img10.jpg"></span>
+                <span>  <img src="img\img11.jpg"></span>
+                <span>  <img src="img\img12.jpg"></span>
+
+             </div>
+            
+
+
+
+               </div>
+   
+              <img src=" img\next.png" id="nextbtn">
+                </div>
+
+
+            
+
+
+            <script>
+
+             let scrollContainer = document.querySelector(".gallery");
+             let backbtn = document.getElementById("backBtn");
+             let nextbtn = document.getElementById("nextBtn");
+             
+             scrollContainer.addEventListener("wheel",(evt) => {
+
+                evt.preventDefault();
+                scrollContainer.scrollLeft += evt.deltaY;
+                scrollContainer.style.scrollBehaviour = "auto";
+
+             });
+                nextbtn.addEventListener("click" , () =>{
+                scrollContainer.style.scrollBehaviour = "smooth";
+                scrollContainer.scrollleft += 900;
+
+             });
+                backbtn.addEventListener("click" , () =>{
+                scrollContainer.style.scrollBehaviour = "smooth";
+                scrollContainer.scrollleft -= 900;
+
+             });
+
+             </script>
+            
+
+            </body>
+
+    
+</html>
+
